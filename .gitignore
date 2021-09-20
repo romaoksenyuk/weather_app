@@ -1,0 +1,11 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+mongoenv/
+.idea/
+
+*.sqlite3
+*.pyc
