@@ -35,7 +35,22 @@
       </div>
     </div>
   </header>
-<h1>Погодний додаток</h1>
+ <div class="col-5 offset-2">
+            <h1>Інформація</h1>
+            <div class="alert alert-info">
+                <div class="row">
+                <div class="col-9">
+            <b>Місто</b> {{ info.city }}<br>
+                <b>Температура</b> {{ info.temp }}<sup>0</sup><br>
+                <b>Мінімальна температура</b> {{ info.temp_min }}<sup>0</sup><br>
+                <b>Максимальна температура</b> {{ info.temp_max }}<sup>0</sup><br>
+                    </div>
+                 <div class="col-2 offset-1">
+                <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt=" Фото" class="img-thumbnail">
+                 </div>
+                    </div>
+            </div>
+        </div>
 </body>
 
 </html>
