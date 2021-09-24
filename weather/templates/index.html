@@ -36,7 +36,18 @@
     </div>
   </header>
  <div class="col-5 offset-2">
+
+         <form action="" method="post">
+             {% csrf_token %}
+               <label for="city">Місто</label>
+             {{ form.name }}
+             <input type="submit" name="sent" value="Пошук" class="mt-2 btn btn-danger">
+        </form>
+
             <h1>Інформація</h1>
+
+            {% for info in all_info %}
+
             <div class="alert alert-info">
                 <div class="row">
                 <div class="col-9">
@@ -50,6 +61,8 @@
                  </div>
                     </div>
             </div>
+
+            {% endfor %}
         </div>
 </body>
 
