@@ -14,20 +14,16 @@
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
           <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
         </a>
-
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-
           <li><a href="#" class="nav-link px-2 text-white">Домашня сторінка</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
           <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Про нас</a></li>
         </ul>
-
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
           <input type="search" class="form-control form-control-dark" placeholder="Пошук..." aria-label="Search">
         </form>
-
         <div class="text-end">
           <button type="button" class="btn btn-outline-light me-2">Login</button>
           <button type="button" class="btn btn-warning">Sign-up</button>
@@ -35,35 +31,40 @@
       </div>
     </div>
   </header>
- <div class="col-5 offset-2">
-
-         <form action="" method="post">
-             {% csrf_token %}
-               <label for="city">Місто</label>
-             {{ form.name }}
-             <input type="submit" name="sent" value="Пошук" class="mt-2 btn btn-danger">
-        </form>
-
-            <h1>Інформація</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-0">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="col-5 offset-4">
+               <label for="city"><h1>Місто</h1></label>
+                </div>
+                {{ form.name }}
+                <input type="submit" name="sent" value="Пошук" class="mt-2 btn btn-danger">
+            </form>
+                </div>
+            <div class="col-6 offset-2">
+                <div class="col-5 offset-4">
+                    <h1>Інформація</h1>
+                </div>
 
             {% for info in all_info %}
-
             <div class="alert alert-info">
                 <div class="row">
-                <div class="col-9">
-            <b>Місто</b> {{ info.city }}<br>
+                    <div class="col-6 offset-0">
+                <b>Місто</b> {{ info.city }}<br>
                 <b>Температура</b> {{ info.temp }}<sup>0</sup><br>
                 <b>Мінімальна температура</b> {{ info.temp_min }}<sup>0</sup><br>
                 <b>Максимальна температура</b> {{ info.temp_max }}<sup>0</sup><br>
                     </div>
-                 <div class="col-2 offset-1">
-                <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt=" Фото" class="img-thumbnail">
-                 </div>
-                    </div>
+                        <div class="col-2 offset-4">
+                             <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt=" Фото" class="img-thumbnail">
+                        </div>
+                </div>
             </div>
-
             {% endfor %}
+            </div>
+            </div>
         </div>
 </body>
-
 </html>
